@@ -148,10 +148,20 @@ Evaluated the final trained model on the completely separate test set to get an 
 
 ## Key Findings and Interpretation:
 
-Here’s a summary of what the results from our experiments show, ranked from best to worst performing model on the test data.
+Here is a summary of the findings for each model, ranked by performance on the test data.
 
-<img width="794" height="617" alt="image" src="https://github.com/user-attachments/assets/ed7d60e9-730e-4ae8-ab4a-4ecc0cb4262b" />
+### Model Performance Summary
 
+| Rank | Model | Test Accuracy | Test Loss | Key Observations & Interpretation |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | **ZFNet** | **93.02%** | **0.15** | This was the **best-performing model**. It showed a strong ability to learn from the training data and generalized very well to the unseen test data. |
+| 2 | **LeNet-5** | **88.37%** | **0.40** | Despite being a simple architecture, LeNet-5 performed remarkably well. It showed signs of **overfitting** but still generalized effectively. |
+| 3 (tie) | **AlexNet** | **53.49%** | **0.69** | This model **failed to learn** effectively. The accuracy remained slightly better than random guessing, suggesting it was too complex for the small dataset or required more tuning. |
+| 3 (tie) | **GoogLeNet**| **53.49%** | **0.69** | Similar to AlexNet, GoogLeNet also **failed to learn**. The accuracy was stuck at the baseline, indicating it could not find meaningful patterns in the data. |
+| 5 (tie) | **VGGNet** | **46.51%** | **NaN** | This model **completely failed**. The loss became `NaN` (Not a Number) due to unstable training. Its performance is worse than random guessing. |
+| 5 (tie) | **ResNet** | **46.51%** | **10.65** | This model also **failed to generalize**. While it achieved high training accuracy, it performed very poorly on the validation and test data, a classic case of **severe overfitting**. |
+
+Based on the experiments, the **ZFNet** model was the best-performing architecture.
 
 ## Conclusion:
 
